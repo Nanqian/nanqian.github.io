@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nanqian.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-03-16T13:16:34.983Z</updated>
+    <title>浅水</title>
+    <updated>2020-03-16T13:36:17.733Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nanqian.github.io"/>
     <link rel="self" href="https://nanqian.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>Life is fantastic</subtitle>
     <logo>https://nanqian.github.io/images/avatar.png</logo>
     <icon>https://nanqian.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, 浅水</rights>
+    <entry>
+        <title type="html"><![CDATA[从这里开始]]></title>
+        <id>https://nanqian.github.io/post/从这里开始/</id>
+        <link href="https://nanqian.github.io/post/从这里开始/">
+        </link>
+        <updated>2020-02-07T15:49:12.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="本人另一个博客">本人另一个博客</h2>
+<h3 id="浅水"><a href="https://nanqian.top/">浅水</a></h3>
+<blockquote>
+<blockquote>
+<h6 id="以下附上首页头图frome-wlop">以下附上首页头图（Frome WLOP <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>）</h6>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/02/14/WCSlZykJVazg84x.png" alt="Lunar-New-Year.png" title="Lunar New Year" loading="lazy"></figure>
+</blockquote>
+</blockquote>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>微博：<a href="https://www.weibo.com/wlop">https://www.weibo.com/wlop</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://nanqian.github.io/post/hello-gridea/</id>
