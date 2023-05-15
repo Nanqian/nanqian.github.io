@@ -1,88 +1,40 @@
-const packageinfo = `api/packageinfo/`;
+const sentence = document.getElementById('sentence');
+const author = document.getElementById('author');
+const btn = document.querySelector('.btn');
 
-function load() {
-	fetchTweaksList().then((data) => {
-		handleTweakData(data);
-	});
-}
+document.ready = getSentence();
+/*
+btn.addEventListener('click', function () {
+  getSentence();
+});
+*/
 
-function handleTweakData(data) {
-	const listElement = document.createElement('div');
+// 从一言api获取语句  并显示出来
+async function getSentence() {
+  const config = {
+    encode: 'json',
+    charset: 'utf - 8',
+  };
 
-	data.package_ids.forEach((packageId) => {
-		fetchPackageControl(packageId).then((controlData) => {
-			const link = document.createElement('a');
-			link.href = `depictions/index.html?packageId=${packageId}`;
+  let res = await fetch('https://v1.hitokoto.cn/', config);
+  let data = await res.json();
+  sentence.innerHTML = data.hitokoto;
+  if (data.from_who != null) {
+    author.innerHTML = `—— ${data.from_who}`;
+  } else {
+    author.innerHTML = `—— ${data.from}`;
+  }
 
-			// Row content
-			const tweakRow = document.createElement('div');
-			tweakRow.className = 'tweak-row';
 
-			// Tweak icon
-			const image = document.createElement('img');
-			image.src = `${packageinfo}${packageId}/icon.png`;
-			image.className = 'tweak-row-img';
-			tweakRow.appendChild(image);
-
-			// Tweak description
-			const tweakInfo = document.createElement('div');
-			tweakInfo.className = 'tweak-info';
-
-			const tweakTitle = document.createElement('h3');
-			const tweakTitleText = document.createTextNode(`${controlData.Name}`);
-			tweakTitle.className = 'tweak-title';
-			tweakTitle.appendChild(tweakTitleText);
-			tweakInfo.appendChild(tweakTitle);
-
-			const tweakSubtitle = document.createElement('p');
-			const tweakSubtitleText = document.createTextNode(`${controlData.Description}`);
-			tweakSubtitle.className = 'tweak-subtitle';
-			tweakSubtitle.appendChild(tweakSubtitleText);
-			tweakInfo.appendChild(tweakSubtitleText);
-
-			const chevronImage = document.createElement('img');
-			chevronImage.src = 'assets/images/chevron.png';
-			chevronImage.alt = 'Chevron';
-			chevronImage.className = 'chevron-icon';
-
-			tweakRow.appendChild(tweakInfo);
-			tweakRow.appendChild(chevronImage);
-			link.appendChild(tweakRow);
-			listElement.appendChild(link);
-		});
-
-		document.getElementById('tweak-rows').appendChild(listElement);
-	});
-}
-
-function isValidResponse(response) {
-	return !(response.status >= 400 && response.status < 600);
-}
-
-// Async
-
-async function fetchPackageControl(packageId) {
-	try {
-		const response = await fetch(`${packageinfo}${packageId}/control.json`);
-		if (isValidResponse(response)) {
-			return response.json();
-		} else {
-			throw new Error('Bad response from server');
-		}
-	} catch (error) {
-		console.log(error);
-	}
-}
-
-async function fetchTweaksList() {
-	try {
-		const response = await fetch(`api/packages.json`);
-		if (isValidResponse(response)) {
-			return response.json();
-		} else {
-			throw new Error('Bad response from server');
-		}
-	} catch (error) {
-		console.log(error);
-	}
-}
+  // let res = fetch('https://v1.hitokoto.cn/', config);
+  // res
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     sentence.innerHTML = data.hitokoto;
+  //     if (data.from_who != null) {
+  //       author.innerHTML = `—— ${data.from_who}`;
+  //     } else {
+  //       author.innerHTML = `—— ${data.from}`;
+  //     }
+  //   });
+};

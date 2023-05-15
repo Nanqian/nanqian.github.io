@@ -1,90 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Roboto;
-    background-color: #F1F1F1;
-    overflow-x: hidden;
-    margin: 30px 0px 30px 0px;
-    padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: rgb(104, 109, 224);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.container {
+  width: 800px;
+  /* height: 350px; */
+  padding: 50px 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 12.1px 6.4px 10px rgba(0, 0, 0, 0.024),
+    60px 32px 80px rgba(0, 0, 0, 0.07);
 }
 
-#content {
-    background-color: white;
+h3 {
+  color: grey;
+  font-size: 15px;
 }
 
-/* Header */
-
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-  
-#header h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
+h3 a {
+  color: grey;
 }
 
-.add-repo-button {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #3b82f6;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+#sentence {
+  margin: 50px 70px 20px;
 }
-  
-.add-repo-button:hover {
-    background-color: #2563eb;
+#author {
+  margin: 0 70px 30px;
+  text-align: end;
 }
 
-/* Tweak rows */
-
-#tweak-rows {
-    display: flex;
-    flex-direction: column;
+.btn {
+  font-size: 15px;
+  font-family: Arial;
+  width: 140px;
+  height: 50px;
+  margin: 0 5px;
+  border-width: 1px;
+  color: #fff;
+  border-color: #d02718;
+  font-weight: bold;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0px 7px 0px 0px #8a2a21;
+  text-shadow: 0px 1px 0px #810e05;
+  background: linear-gradient(#c62d1f, #f24437);
+  cursor: pointer;
+  user-select: none;
 }
 
-.tweak-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.tweak-row-img {
-    width: 45px;
-    height: 45px;
-    margin-right: 16px;
-    border-radius: 10px;
-}
-
-.tweak-info {
-    flex: 1;
-}
-
-.tweak-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
-}
-
-.tweak-subtitle {
-    font-size: 14px;
-    color: #666;
-    margin: 2px 0 0 0;
-}
-
-.chevron-icon {
-    width: 35px;
-    height: 35px;
+.btn a {
+  color: #fff;
 }
