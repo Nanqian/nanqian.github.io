@@ -1,0 +1,13 @@
+Package: com.bigsurcenter.zh-cn
+Architecture: iphoneos-arm64
+Version: 1.0
+Section: Tweaks
+Maintainer: Nanqian
+Filename: ./debs/com.bigsurcenter.zh-cn_1.0_iphoneos-arm64.deb
+Size: 4496
+MD5sum: 874D444E3ECAD1397CCEA4FA5242A4C2
+Description: Bigsurcenter本地化语言
+Depends: com.nicho1asdev.bigsurcenter
+Author: Nanqian
+Name: BigSurCenter汉化
+Depiction: https://Nanqian.github.io/repo/index.html
