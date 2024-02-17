@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="nanqian">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="国内公共DNS1. 阿里DNS官网 123456789IPv4: 223.5.5.5IPv4: 223.6.6.6IPv6: 2400:3200::1IPv6: 2400:3200:baba::1DoH: https:&#x2F;&#x2F;223.5.5.dns-queryDoH: https:&#x2F;&#x2F;223.6.6.dns-queryDoH: https:&#x2F;&#x2F;dnalidns.com&#x2F;dns-queryDoT: dn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="国内外公共DNS">
+<meta property="og:url" content="https://nanqian.github.io/uncategorized/%E5%9B%BD%E5%86%85%E5%A4%96%E5%85%AC%E5%85%B1DNS.html">
+<meta property="og:site_name" content="浅水">
+<meta property="og:description" content="国内公共DNS1. 阿里DNS官网 123456789IPv4: 223.5.5.5IPv4: 223.6.6.6IPv6: 2400:3200::1IPv6: 2400:3200:baba::1DoH: https:&#x2F;&#x2F;223.5.5.dns-queryDoH: https:&#x2F;&#x2F;223.6.6.dns-queryDoH: https:&#x2F;&#x2F;dnalidns.com&#x2F;dns-queryDoT: dn">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-02-17T14:48:33.000Z">
+<meta property="article:modified_time" content="2024-02-17T15:59:00.914Z">
+<meta property="article:author" content="nanqian">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>国内外公共DNS - 浅水</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"nanqian.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>浅水</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle">国内外公共DNS</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-17 22:48" pubdate>
+          2024年2月17日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          24 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">国内外公共DNS</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="国内公共DNS"><a href="#国内公共DNS" class="headerlink" title="国内公共DNS"></a>国内公共DNS</h2><h3 id="1-阿里DNS"><a href="#1-阿里DNS" class="headerlink" title="1. 阿里DNS"></a>1. 阿里DNS</h3><p><a target="_blank" rel="noopener" href="https://alidns.com/">官网</a></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">IPv4</span>: <span class="hljs-number">223.5.5.5</span><br><span class="hljs-attribute">IPv4</span>: <span class="hljs-number">223.6.6.6</span><br><span class="hljs-attribute">IPv6</span>: <span class="hljs-number">2400</span>:<span class="hljs-number">3200</span>::<span class="hljs-number">1</span><br><span class="hljs-attribute">IPv6</span>: <span class="hljs-number">2400</span>:<span class="hljs-number">3200</span>:baba::<span class="hljs-number">1</span><br><span class="hljs-attribute">DoH</span>: https://<span class="hljs-number">223</span>.<span class="hljs-number">5</span>.<span class="hljs-number">5</span>.dns-query<br><span class="hljs-attribute">DoH</span>: https://<span class="hljs-number">223</span>.<span class="hljs-number">6</span>.<span class="hljs-number">6</span>.dns-query<br><span class="hljs-attribute">DoH</span>: https://dnalidns.com/dns-query<br><span class="hljs-attribute">DoT</span>: dns.alidns.com<br><span class="hljs-attribute">DoQ</span>: quic://dns.alidns.com<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-腾讯DNS"><a href="#2-腾讯DNS" class="headerlink" title="2. 腾讯DNS"></a>2. 腾讯DNS</h3><p><a target="_blank" rel="noopener" href="https://www.dnspod.cn/Products/publicdns">官网</a></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">119.29</span><span class="hljs-number">.29</span><span class="hljs-number">.29</span><br><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">182.254</span><span class="hljs-number">.116</span><span class="hljs-number">.116</span><br><span class="hljs-symbol">IPv6:</span> <span class="hljs-number">2402</span>:<span class="hljs-number">4e00</span>::<br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//doh.pub/dns-query</span><br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//1.12.12.12/dns-query</span><br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//120.53.53.53/dns-query</span><br>DoH (国密): https:<span class="hljs-comment">//sm2.doh.pub/dns-quer</span><br><span class="hljs-symbol">DoT:</span> dot.pub<br><span class="hljs-symbol">DoT:</span> <span class="hljs-number">1.12</span><span class="hljs-number">.12</span><span class="hljs-number">.12</span><br><span class="hljs-symbol">DoT:</span> <span class="hljs-number">120.53</span><span class="hljs-number">.53</span><span class="hljs-number">.53</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-CNNIC-DNS"><a href="#3-CNNIC-DNS" class="headerlink" title="3. CNNIC DNS"></a>3. CNNIC DNS</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">IPV4</span>: <span class="hljs-number">1.2.4.8</span><br><span class="hljs-attribute">IPV4</span>: <span class="hljs-number">210.2.4.8</span><br><span class="hljs-attribute">IPV6</span>: <span class="hljs-number">2001</span>:dc7:<span class="hljs-number">1000</span>::<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-CFIEC-DNS"><a href="#4-CFIEC-DNS" class="headerlink" title="4. CFIEC DNS"></a>4. CFIEC DNS</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">IPv6:</span> <span class="hljs-number">240</span>c::<span class="hljs-number">6666</span><br><span class="hljs-symbol">IPv6:</span> <span class="hljs-number">240</span>C::<span class="hljs-number">6644</span><br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//dns.cfiec.net/dns-query</span><br><span class="hljs-symbol">DoT:</span> dns.cfiec.net<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-360DNS"><a href="#5-360DNS" class="headerlink" title="5. 360DNS"></a>5. 360DNS</h3><p><a target="_blank" rel="noopener" href="https://sdns.360.net/">官网</a></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk">电信<span class="hljs-regexp">/铁通/</span>移动IPv4: <span class="hljs-number">101.226</span>.<span class="hljs-number">4.6</span><br>电信<span class="hljs-regexp">/铁通/</span>移动IPv4: <span class="hljs-number">218.30</span>.<span class="hljs-number">118.6</span><br>联通IPv4: <span class="hljs-number">123.125</span>.<span class="hljs-number">81.6</span><br>联通IPv4: <span class="hljs-number">140.207</span>.<span class="hljs-number">198.6</span><br>DoH: https:<span class="hljs-regexp">//</span>doh.<span class="hljs-number">360</span>.cn/dns-query	<br>DoT: dot.<span class="hljs-number">360</span>.cn<br></code></pre></td></tr></table></figure>
+
+<h3 id="6-百度DNS"><a href="#6-百度DNS" class="headerlink" title="6. 百度DNS"></a>6. 百度DNS</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">IPv4</span>: <span class="hljs-number">180.76.76.76</span><br><span class="hljs-attribute">IPv6</span>: <span class="hljs-number">2400</span>:da00::<span class="hljs-number">6666</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="7-iQDNS"><a href="#7-iQDNS" class="headerlink" title="7. iQDNS"></a>7. iQDNS</h3><p><a target="_blank" rel="noopener" href="https://t.me/iQDNS">TG频道</a></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vim">TCP/UDP: <span class="hljs-keyword">cn</span>-<span class="hljs-keyword">a</span>.ovo.glas<span class="hljs-variable">s:777</span><br>DoH: https://<span class="hljs-keyword">cn</span>-<span class="hljs-keyword">a</span>.iqiqz.<span class="hljs-keyword">com</span>/dns-query<br>DoH: https://<span class="hljs-keyword">cn</span>-<span class="hljs-keyword">a</span>.iqiqz.<span class="hljs-keyword">com</span>/cdn<br>DoT: tls://<span class="hljs-keyword">cn</span>-<span class="hljs-keyword">a</span>.iqiqz.<span class="hljs-keyword">com</span><br>DoQ: quic://<span class="hljs-keyword">cn</span>-<span class="hljs-keyword">a</span>.ovo.glass<br></code></pre></td></tr></table></figure>
+
+<h3 id="8-台湾Quad-101-twnic"><a href="#8-台湾Quad-101-twnic" class="headerlink" title="8. 台湾Quad 101(twnic)"></a>8. 台湾Quad 101(twnic)</h3><p><a target="_blank" rel="noopener" href="https://101.101.101.101/">官网</a></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">IPV4:</span> <span class="hljs-number">101.101</span><span class="hljs-number">.101</span><span class="hljs-number">.101</span><br><span class="hljs-symbol">IPV4:</span> <span class="hljs-number">101.102</span><span class="hljs-number">.103</span><span class="hljs-number">.104</span><br><span class="hljs-symbol">IPV6:</span> <span class="hljs-number">2001</span>:de4::<span class="hljs-number">101</span><br><span class="hljs-symbol">IPV6:</span> <span class="hljs-number">2001</span>:de4::<span class="hljs-number">102</span><br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//dns.twnic.tw/dns-query</span><br><span class="hljs-symbol">DoT:</span> dns.twnic.tw<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="国外公共DNS"><a href="#国外公共DNS" class="headerlink" title="国外公共DNS"></a>国外公共DNS</h2><h3 id="1-Google-Public-DNS"><a href="#1-Google-Public-DNS" class="headerlink" title="1. Google Public DNS"></a>1. Google Public DNS</h3><p><a target="_blank" rel="noopener" href="https://developers.google.com/speed/public-dns?hl=zh-cn">官网</a></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">8.8</span><span class="hljs-number">.8</span><span class="hljs-number">.8</span><br><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">8.8</span><span class="hljs-number">.4</span><span class="hljs-number">.4</span><br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//dns.google/dns-query</span><br><span class="hljs-symbol">DoT:</span> dns.google<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-Cloudflare-DNS"><a href="#2-Cloudflare-DNS" class="headerlink" title="2. Cloudflare DNS"></a>2. Cloudflare DNS</h3><p><a target="_blank" rel="noopener" href="https://1.1.1.1/zh-Hans/dns/">官网</a></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">IPv4</span>: <span class="hljs-number">1.0.0.1</span><br><span class="hljs-attribute">IPv4</span>: <span class="hljs-number">1.1.1.1</span><br><span class="hljs-attribute">IPv6</span>: <span class="hljs-number">2606</span>:<span class="hljs-number">4700</span>:<span class="hljs-number">4700</span>::<span class="hljs-number">1111</span><br><span class="hljs-attribute">IPv6</span>: <span class="hljs-number">2606</span>:<span class="hljs-number">4700</span>:<span class="hljs-number">4700</span>::<span class="hljs-number">1001</span><br><span class="hljs-attribute">DoH</span>: https://<span class="hljs-number">1.1.1.1</span>/dns-query<br><span class="hljs-attribute">DoH</span>: https://<span class="hljs-number">1.0.0.1</span>/dns-query<br><span class="hljs-attribute">DoH</span>: https://<span class="hljs-number">1</span>dot1dot1dot1.cloudflare-dns.com/<br><span class="hljs-attribute">DoT</span>: one.one.one.one<br><span class="hljs-attribute">DoT</span>: cloudflare-dns.com<br></code></pre></td></tr></table></figure>
+<h3 id="3-Quad9"><a href="#3-Quad9" class="headerlink" title="3. Quad9"></a>3. Quad9</h3><p><a target="_blank" rel="noopener" href="https://www.quad9.net/service/service-addresses-and-features">官网</a></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">9.9</span><span class="hljs-number">.9</span><span class="hljs-number">.9</span><br><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">149.112</span><span class="hljs-number">.112</span><span class="hljs-number">.112</span><br><span class="hljs-symbol">IPv6:</span> <span class="hljs-number">2620</span>:fe::fe<br><span class="hljs-symbol">IPv6:</span> <span class="hljs-number">2620</span>:fe::<span class="hljs-number">9</span><br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//dns.quad9.net/dns-query</span><br><span class="hljs-symbol">DoT:</span> dns.quad9.net<br></code></pre></td></tr></table></figure>
+<h3 id="4-DNS-SB"><a href="#4-DNS-SB" class="headerlink" title="4. DNS.SB"></a>4. DNS.SB</h3><p><a target="_blank" rel="noopener" href="https://dns.sb/">官网</a></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">185.222</span><span class="hljs-number">.222</span><span class="hljs-number">.222</span><br><span class="hljs-symbol">IPv4:</span> <span class="hljs-number">45.11</span><span class="hljs-number">.45</span><span class="hljs-number">.11</span><br><span class="hljs-symbol">IPv6:</span> <span class="hljs-number">2</span>a09::<br><span class="hljs-symbol">IPv6:</span> <span class="hljs-number">2</span>a11::<br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//doh.dns.sb/dns-query</span><br><span class="hljs-symbol">DoH:</span> https:<span class="hljs-comment">//doh.sb/dns-query</span><br><span class="hljs-symbol">DoT:</span> dot.sb<br></code></pre></td></tr></table></figure>
+<h3 id="5-CleanBrowsing-DNS"><a href="#5-CleanBrowsing-DNS" class="headerlink" title="5. CleanBrowsing DNS"></a>5. CleanBrowsing DNS</h3><p><a target="_blank" rel="noopener" href="https://cleanbrowsing.org/">官网</a></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment">#安全保护：阻止对网络钓鱼、垃圾邮件、恶意软件和恶意域的访问。</span><br>IPv4：<span class="hljs-number">185.228</span>.<span class="hljs-number">168.9</span><br>IPv4：<span class="hljs-number">185.228</span>.<span class="hljs-number">169.9</span><br>DoH：https:<span class="hljs-regexp">//</span>doh.cleanbrowsing.org<span class="hljs-regexp">/doh/</span>security-filter/<br>DoT：dns.cleanbrowsing.org<br>     <br><span class="hljs-comment">#成人保护：阻止访问所有成人、恶意和网络钓鱼网站。它不会阻止代理、混合内容网站（如 Reddit）</span><br>IPv4：<span class="hljs-number">185.228</span>.<span class="hljs-number">168.10</span><br>IPv4：<span class="hljs-number">185.228</span>.<span class="hljs-number">169.11</span><br>DOH：https:<span class="hljs-regexp">//</span>doh.cleanbrowsing.org<span class="hljs-regexp">/doh/</span>adult-filter/<br>DOT：dns.cleanbrowsing.org<br>     <br><span class="hljs-comment">#家庭保护:阻止访问所有成人、恶意、网络钓鱼、混合内容网站（如 Reddit）、阻止用于绕过过滤器的代理、Google、Bing 和 Youtube 设置为安全模式。</span><br>IPv4：<span class="hljs-number">185.228</span>.<span class="hljs-number">168.168</span><br>IPv4：<span class="hljs-number">185.228</span>.<span class="hljs-number">169.168</span><br>DoH：https:<span class="hljs-regexp">//</span>doh.cleanbrowsing.org<span class="hljs-regexp">/doh/</span>family-filter/<br>DoT：dns.cleanbrowsing.org<br></code></pre></td></tr></table></figure>
+
+<h3 id="6-AdGuard-DNS"><a href="#6-AdGuard-DNS" class="headerlink" title="6. AdGuard DNS"></a>6. AdGuard DNS</h3><p><a target="_blank" rel="noopener" href="https://adguard-dns.io/zh_cn/public-dns.html">官网</a></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs stylus">#无过滤，不拦截<br>IPv4：<span class="hljs-number">94.140</span>.<span class="hljs-number">14.140</span><br>IPv4：<span class="hljs-number">94.140</span>.<span class="hljs-number">15.15</span><br>DoH：https:<span class="hljs-comment">//dns-unfiltered.adguard.com/dns-query</span><br>DoT：dns-unfiltered<span class="hljs-selector-class">.adguard</span><span class="hljs-selector-class">.com</span><br>DoQ：dns-unfiltered<span class="hljs-selector-class">.adguard</span><span class="hljs-selector-class">.com</span><br>     <br>#过滤广告和跟踪<br>IPv4：<span class="hljs-number">94.140</span>.<span class="hljs-number">14.14</span><br>IPv4：<span class="hljs-number">94.140</span>.<span class="hljs-number">15.15</span><br>DoH：https:<span class="hljs-comment">//dns.adguard.com/dns-query</span><br>DoT：dns<span class="hljs-selector-class">.adguard</span><span class="hljs-selector-class">.com</span><br>DoQ：dns<span class="hljs-selector-class">.adguard</span><span class="hljs-selector-class">.com</span><br>     <br>#家庭过滤：开启安全搜索和安全模式选项、拦截成人内容，并且屏蔽广告和跟踪器<br>IPv4：<span class="hljs-number">94.140</span>.<span class="hljs-number">14.15</span><br>IPv4：<span class="hljs-number">94.140</span>.<span class="hljs-number">15.16</span><br>DoH：https:<span class="hljs-comment">//dns-family.adguard.com/dns-query</span><br>DoT：dns-family<span class="hljs-selector-class">.adguard</span><span class="hljs-selector-class">.com</span><br>DoQ：quic:<span class="hljs-comment">//dns-family.adguard.com</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>国内外公共DNS</div>
+      <div>https://nanqian.github.io/uncategorized/国内外公共DNS.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>nanqian</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年2月17日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/uncategorized/test.html" title="Nanqian">
+                        <span class="hidden-mobile">Nanqian</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
