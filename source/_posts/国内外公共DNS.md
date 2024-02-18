@@ -12,8 +12,8 @@ IPv4: 223.5.5.5
 IPv4: 223.6.6.6
 IPv6: 2400:3200::1
 IPv6: 2400:3200:baba::1
-DoH: https://223.5.5.dns-query
-DoH: https://223.6.6.dns-query
+DoH: https://223.5.5.5/dns-query
+DoH: https://223.6.6.6/dns-query
 DoH: https://dnalidns.com/dns-query
 DoT: dns.alidns.com
 DoQ: quic://dns.alidns.com
